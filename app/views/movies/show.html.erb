@@ -23,13 +23,17 @@
 					<%= link_to "Write your comment!", "#"  %>
 				</div>
 			</div>
-			<div class="col-md-7">
+			<div class="col-md-8">
+				<% if @movie.user = current_user %>			
+					<div class="btn-group pull-right" role="group">
+						<%= link_to edit_movie_path(@movie), class: "btn btn-default" do %>
+						<i class="fa fa-pencil"></i>
+						<% end %>
+					</div>
+				<% end %>
 			<h2><%= @movie.title %></h2>
 			<p><%= youtube(@movie.description) %></p>
 			</div>
 		</div>
 	</div>
 </div>
-
-
-<%= link_to "Edit", edit_movie_path(@movie)  %>
