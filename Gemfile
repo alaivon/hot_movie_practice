@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 ruby '2.2.1'
 
+
+gem 'html-pipeline'
+gem 'html-pipeline-youtube'
 gem "paperclip", "~> 4.3"
 gem 'annotate'
 gem 'simple_form'

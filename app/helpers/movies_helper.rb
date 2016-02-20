@@ -13,4 +13,13 @@
 #
 
 module MoviesHelper
+
+	  def youtube(content)
+      context = { gfm: true}
+      pipeline = HTML::Pipeline.new [
+    HTML::Pipeline::YoutubeFilter,
+    ], context
+  
+    pipeline.call(content)[:output].to_s.html_safe
+  end
 end

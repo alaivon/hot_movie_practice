@@ -1,5 +1,5 @@
 <%= image_tag(@movie.image.url(:medium)) %>
 <h2><%= @movie.title %></h2>
-<p><%= @movie.description %></p>
+<p><%= youtube(@movie.description) %></p>
 
 <%= link_to "Edit", edit_movie_path(@movie)  %>
