@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.2.1'
 
+gem "paperclip", "~> 4.3"
 gem 'annotate'
 gem 'simple_form'
 gem 'font-awesome-sass'
