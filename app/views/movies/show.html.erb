@@ -25,10 +25,11 @@
 			</div>
 			<div class="col-md-7">
 			<h2><%= @movie.title %></h2>
-			<p><%= @movie.description %></p>
+			<p><%= youtube(@movie.description) %></p>
 			</div>
 		</div>
 	</div>
 </div>
+
 
 <%= link_to "Edit", edit_movie_path(@movie)  %>

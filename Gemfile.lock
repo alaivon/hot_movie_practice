@@ -85,12 +85,18 @@ GEM
     execjs (2.6.0)
     font-awesome-sass (4.5.0)
       sass (>= 3.2)
+    github-markdown (0.6.9)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     hirb (0.7.3)
     hirb-unicode (0.0.5)
       hirb (~> 0.5)
       unicode-display_width (~> 0.1.1)
+    html-pipeline (2.3.0)
+      activesupport (>= 2, < 5)
+      nokogiri (>= 1.4)
+    html-pipeline-youtube (0.1.2)
+      html-pipeline (~> 2.0)
     i18n (0.7.0)
     jbuilder (2.4.1)
       activesupport (>= 3.0.0, < 5.1)
@@ -216,6 +222,9 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   devise
   font-awesome-sass
+  github-markdown (~> 0.6.9)
+  html-pipeline
+  html-pipeline-youtube
   jbuilder (~> 2.0)
   jquery-rails
   paperclip (~> 4.3)

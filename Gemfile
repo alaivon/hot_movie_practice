@@ -1,6 +1,10 @@
 source 'https://rubygems.org'
 ruby '2.2.1'
 
+# gem 'github-linguist', '~> 4.7', '>= 4.7.4'
+gem 'github-markdown', '~> 0.6.9'
+gem 'html-pipeline'
+gem 'html-pipeline-youtube'
 gem "paperclip", "~> 4.3"
 gem 'annotate'
 gem 'simple_form'

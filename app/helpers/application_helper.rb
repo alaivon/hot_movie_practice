@@ -16,4 +16,14 @@ module ApplicationHelper
 
     alerts.join("\n").html_safe
   end
+
+ def youtube(content)
+    context = { gfm: true}
+    pipeline = HTML::Pipeline.new [
+  HTML::Pipeline::YoutubeFilter,
+  HTML::Pipeline::MarkdownFilter
+  ], context
+
+  pipeline.call(content)[:output].to_s.html_safe
+end
 end
