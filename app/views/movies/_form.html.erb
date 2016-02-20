@@ -1,0 +1,17 @@
+<%= simple_form_for @movie do |f| %>
+	<div class="title">
+		<%= f.input :title %>
+	</div>
+	<div class="description">
+		<%= f.input :description %>
+	</div>
+	<div class="director">
+		<%= f.input :director %>
+	</div>
+	<div class="length">
+		<%= f.input :length, label: "Length(min)" %>
+	</div>
+
+	<%= f.submit %>
+
+<% end %>
