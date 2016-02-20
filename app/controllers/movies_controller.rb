@@ -14,6 +14,7 @@
 
 class MoviesController < ApplicationController
 	before_action :find_movie, except: [:index, :new, :create]
+	before_action :authenticate_user!, except: [:index, :show]
 
 	def index
 	@movies = Movie.all	
@@ -24,11 +25,11 @@ class MoviesController < ApplicationController
 	end
 
 	def new
-		@movie = Movie.new
+		@movie = current_user.movies.build
 	end
 
 	def create
-		@movie = Movie.new(movie_params)
+		@movie = current_user.movies.build(movie_params)
 		if @movie.save
 			redirect_to @movie
 		else
