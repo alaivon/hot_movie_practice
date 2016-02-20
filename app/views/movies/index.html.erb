@@ -1,6 +1,11 @@
-<ul>
-<% @movies.each do |movie| %>
-	<li><%= image_tag(movie.image.url(:thumb)) %></li>
-	<li><%= link_to movie.title, movie  %></li>
-<% end %>
-</ul>
+<div class="row">
+	<% @movies.each do |movie| %>
+		<div class="col-md-3 col-sm-6">
+			<div class="box panel panel-default">
+        <%= link_to (image_tag movie.image.url(:thumb)), movie %>
+        <h3><%= link_to movie.title, movie  %></h3>
+			</div>
+		</div>
+		
+	<% end %>
+</div>
