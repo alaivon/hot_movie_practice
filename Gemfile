@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.2.1'
 
+gem 'annotate'
 gem 'simple_form'
 gem 'font-awesome-sass'
 gem 'awesome_rails_console'
