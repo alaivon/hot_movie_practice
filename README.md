@@ -1,28 +1,43 @@
-== README
+# User Story
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- 身為使用者，必須註冊才能使用本網站。
 
-Things you may want to cover:
+- 身為使用者，可以在本網站新增電影。
+	- 身為使用者，可以在本網站新增電影類型、名稱、介紹、導演、片長、圖片。
+		- 身為使用者，可以在電影介紹貼上youtube網址嵌入影片以及使用markdown。
+	- 身為使用者，可以在本網站編輯電影類型、名稱、介紹、導演、片長、圖片。
 
-* Ruby version
+- 身為使用者，可以在電影頁面中留言發表評論
+	- 身為使用者，再發表評論時，可以評分。
+- 身為使用者，可以在電影頁面中選擇自己喜好(Like or Dislike)。
+- 身為使用者，也可以在電影評論頁面選擇自己喜好(Like or Dislike)。
+- 身為使用者，可以對自己發表的評論進行編輯。
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- 電影頁面中，會出現所有留言的平均分數。
+- 首頁可以選擇電影類型，並出現該類型的所有電影。
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+## Model
+
+- Category
+	has_many :moview
+	- Type: string
+
+- Movie
+	belongs_to :category
+	- Title: string
+	- Description: text
+	- Director: string
+	- Length: integer
+	- Image: string
+	- Category_id: integer
+
+- User
+	has_many :comments
+
+- Comment
+	belongs_to :user
+	- rating: integer
+	- Comment: text
+	- User_id: integer
+	
