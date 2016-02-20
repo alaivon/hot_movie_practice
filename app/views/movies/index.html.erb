@@ -1,5 +1,6 @@
 <ul>
 <% @movies.each do |movie| %>
+	<li><%= image_tag(movie.image.url(:thumb)) %></li>
 	<li><%= link_to movie.title, movie  %></li>
 <% end %>
 </ul>
