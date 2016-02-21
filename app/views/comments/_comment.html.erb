@@ -1,0 +1,26 @@
+<div class="comments">
+	
+		<% @comments.each do |comment| %>
+			<div class="comment_body">
+				<%= simple_format(comment.comment) %>
+			</div>
+			<div class="comment_info">	
+				<p class="user">Posted by <em><%= comment.user.email %></em></p>
+				<p class="time"><em><%= time_ago_in_words(comment.created_at) %> Ago</em></p>
+			</div>
+
+		
+		<div class="btn-group">
+			<% if current_user = comment.user %>
+			<%= link_to edit_movie_comment_path(@movie, comment), class: "btn btn-default btn-xs" do %>
+					<i class="fa fa-pencil"></i>
+				<% end %> 
+				<%= link_to movie_comment_path(@movie, comment), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-default btn-xs" do  %>
+					<i class="fa fa-trash-o"></i>
+				<% end %>
+			<% end %>
+		</div>
+	<hr>
+	<% end %>
+
+</div>

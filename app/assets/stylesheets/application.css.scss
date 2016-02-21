@@ -18,6 +18,14 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Lato', sans-serif;
+}
+
 // @mixin background-tile {
 // 	box-sizing: border-box;
 // 	background-color: #fff;

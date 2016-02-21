@@ -1,3 +1,30 @@
 // Place all the styles related to the comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.comments {
+		.comment_body {
+			font-size: 18px;
+			font-weight: 400;
+		}
+		.button {
+			margin: .5rem;
+		}
+		p.user, p.time {
+			margin: auto;
+			color: gray;
+			font-weight: 300;
+			font-style: italic;
+		}
+}
+
+#comment_comment {
+    max-width: 1108px;
+    height: 90px;
+}

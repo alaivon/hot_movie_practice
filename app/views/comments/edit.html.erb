@@ -1,0 +1,6 @@
+<h2>Edit your Comment</h2>
+
+<%= simple_form_for [@movie, @comment] do |f| %>
+	<%= f.input :comment, label: "Write your review below!" %>
+	<%= f.submit %>
+<% end %>

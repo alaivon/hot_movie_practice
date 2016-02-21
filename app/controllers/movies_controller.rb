@@ -21,7 +21,7 @@ class MoviesController < ApplicationController
 	end
 
 	def show
-		
+		@comments = @movie.comments.all
 	end
 
 	def new
