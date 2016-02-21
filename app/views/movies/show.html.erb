@@ -22,7 +22,7 @@
 					</table>
 				</div>
 			</div>
-			<div class="col-md-8">
+			<div class="col-md-8 movie_info">
 				<% if @movie.user = current_user %>			
 					<div class="btn-group pull-right" role="group">
 						<%= link_to edit_movie_path(@movie), class: "btn btn-default" do %>
@@ -34,7 +34,7 @@
 					</div>
 				<% end %>
 			<h2><%= @movie.title %></h2>
-			<h6><em>Posted by <%= @movie.user.email %></em></h6>
+			<h6>Posted by <%= @movie.user.email %></h6>
 			<p><%= youtube(@movie.description) %></p>
 			</div>
 		</div>

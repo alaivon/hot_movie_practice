@@ -18,6 +18,13 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+@mixin box-shadow {
+	-webkit-box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
+	-moz-box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
+	box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
+}
+
+
 * {
 	box-sizing: border-box;
 }
@@ -41,20 +48,53 @@ body {
 // 	box-shadow: 3px 3px 5px 6px #ccc;
 // 	padding: 1.5em 1.25em;
 
-.movie_show {
-	height: 475px;
-	width: 340px;
-	// @include background-tile;
+
+.navbar-header{
+	a.navbar-brand {
+		color: red;	
+		font-size: 24px;
+		font-weight: 900;
+		font-style: italic;
+		letter-spacing: .1em;
+	}
 }
 
+.collapse {
+	#new_movie {
+		a {
+			color: white;
+			&:hover {
+				color: green;
+			}
+		}
+	}
+	a {
+		font-size: 18px;
+		font-weight: 600;
+	}
+}
 .box {
-	  width: 250px;
-	  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
-	  border-radius: 7px;
-	  text-align: center;
+	  background: white;
+		border-radius: 5px;
+		margin-bottom: 40px;
+		@include box-shadow;
+	.image_wrapper {
+		max-width: 100%;
+		border-radius: 5px 5px 0 0;
+		overflow: hidden;
+	}
 	  img {
-	  	max-width: 100%;
+	  	width: 100%;
 	  	height: auto;
+      -webkit-transition: all .5s ease-out;
+	  -moz-transition: all .5s ease-out;
+	  -o-transition: all .5s ease-out;
+    transition: all .5s ease-out;
+		&:hover {
+			transform: scale(1.075);
+		}
+		// width: 100%;
+		
 	  }
 	  h3 {
 	  	font-size: 22px;
