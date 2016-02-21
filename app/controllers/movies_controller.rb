@@ -22,6 +22,11 @@ class MoviesController < ApplicationController
 
 	def show
 		@comments = @movie.comments.all
+		if @comments.blank?
+			@avg_rating = 0
+		else
+			@avg_rating = @comments.average(:rating).round(2)
+		end
 	end
 
 	def new

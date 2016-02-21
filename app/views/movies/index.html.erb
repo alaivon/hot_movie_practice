@@ -3,7 +3,7 @@
 		<div class="col-md-3 col-sm-6">
 			<div class="box panel panel-default">
 				<div class="image_wrapper">
-	        <%= link_to (image_tag movie.image.url(:thumb)), movie %>
+	        <%= link_to (image_tag movie.image.url(:thumb), class: "movie_img"), movie %>
 				</div>
         <h3><%= link_to movie.title, movie  %></h3>
 				<div class="panel-footer clearfix">
@@ -12,9 +12,21 @@
 						<span><i class="fa fa-heart"> <%= movie.get_upvotes.size %></i>
 						</span>
 					</div>
+					<div class="star-rating" data-score= <%= render_avg_rating(movie) %> ></div>
 				</div>
 			</div>
 		</div>
 		
 	<% end %>
 </div>
+
+
+<script>
+    $('.star-rating').raty({
+      path: '/assets/',
+      readOnly: true,
+      score: function() {
+            return $(this).attr('data-score');
+    }
+  });
+</script>

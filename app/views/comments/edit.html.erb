@@ -1,6 +1,16 @@
 <h2>Edit your Comment</h2>
 
 <%= simple_form_for [@movie, @comment] do |f| %>
-	<%= f.input :comment, label: "Write your review below!" %>
-	<%= f.submit %>
+	<div class="field">
+    <div id="star-rating"></div>
+  </div> <br>
+	<%= f.input :comment, label: "Edit your review below!" %>
+	<%= f.submit class: "btn btn-success" %>
 <% end %>
+
+<script>
+  $('#star-rating').raty({
+    path: '/assets/',
+    scoreName: 'comment[rating]'
+  });
+</script>

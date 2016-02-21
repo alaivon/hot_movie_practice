@@ -14,5 +14,7 @@
 
 module MoviesHelper
 
-	  
+	def render_avg_rating(movie)
+		movie.comments.average(:rating)
+  end
 end

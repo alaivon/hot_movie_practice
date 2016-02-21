@@ -33,7 +33,9 @@
 						<% end %>
 					</div>
 				<% end %>
-			<h2><%= @movie.title %></h2>
+			<h2>
+			<%= @movie.title %></h2>
+			<div class="star-rating" data-score= <%= @avg_rating %> ></div>
 			<h6>Posted by <%= @movie.user.email %></h6>
 			<p><%= youtube(@movie.description) %></p>
 			</div>
@@ -45,7 +47,15 @@
 	</div>
 </div>
 
-
+<script>
+    $('.star-rating').raty({
+      path: '/assets/',
+      readOnly: true,
+      score: function() {
+            return $(this).attr('data-score');
+    }
+  });
+</script>
 
 
 
