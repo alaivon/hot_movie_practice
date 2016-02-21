@@ -1,6 +1,6 @@
 <div class="row">
 	<% @movies.each do |movie| %>
-		<div class="col-md-3 col-sm-6">
+		<div class="col-md-3 col-sm-3">
 			<div class="box panel panel-default">
 				<div class="image_wrapper">
 	        <%= link_to (image_tag movie.image.url(:thumb), class: "movie_img"), movie %>

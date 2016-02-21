@@ -20,7 +20,7 @@
 ## Model
 
 - Category
-	has_many :moview
+	has_many :movies
 	- Type: string
 
 - Movie
