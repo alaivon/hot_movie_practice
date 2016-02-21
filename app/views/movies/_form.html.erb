@@ -1,4 +1,7 @@
 <%= simple_form_for @movie do |f| %>
+	<div class="category">	
+	<%= f.collection_select :category_id, Category.all, :id, :name, { promt: "Choose a Category" } %>
+	</div>
 	<div class="title">
 		<%= f.input :title %>
 	</div>
@@ -15,6 +18,6 @@
 		<%= f.input :image, as: :file %>
 	</div>
 
-	<%= f.submit %>
+	<%= f.submit class: "btn btn-danger" %> 
 
 <% end %>

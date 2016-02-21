@@ -31,6 +31,10 @@
 
 body {
 	font-family: 'Lato', sans-serif;
+	background: #5D4157; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to left, #5D4157 , #A8CABA); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to left, #5D4157 , #A8CABA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        
 }
 
 // @mixin background-tile {
@@ -110,5 +114,13 @@ body {
 		span {
 			margin: auto;
 			padding-right: 1rem;
+		}
+	}
+
+	ul.dropdown-menu {
+		background: #655B5B;
+   
+		li {
+			a {color: white;}
 		}
 	}
