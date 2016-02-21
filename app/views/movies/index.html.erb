@@ -4,6 +4,13 @@
 			<div class="box panel panel-default">
         <%= link_to (image_tag movie.image.url(:thumb)), movie %>
         <h3><%= link_to movie.title, movie  %></h3>
+				<div class="panel-footer clearfix">
+					<div class="icon">
+						<span><i class="fa fa-comment"></i> <%= movie.comments.size %></span>
+						<span><i class="fa fa-heart"> <%= movie.get_upvotes.size %></i>
+						</span>
+					</div>
+				</div>
 			</div>
 		</div>
 		

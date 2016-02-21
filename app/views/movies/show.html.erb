@@ -28,6 +28,9 @@
 						<%= link_to edit_movie_path(@movie), class: "btn btn-default" do %>
 						<i class="fa fa-pencil"></i>
 						<% end %>
+						<%= link_to like_movie_path(@movie), class: "btn btn-default", method: :post do  %>
+							<i class="fa fa-heart"> <%= @movie.get_upvotes.size %></i>
+						<% end %>
 					</div>
 				<% end %>
 			<h2><%= @movie.title %></h2>

@@ -4,8 +4,16 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  resources :movies do 
-    resources :comments
+  resources :movies do
+    member do
+      post 'like' => 'movies#upvote'
+    end
+    resources :comments do
+      member do
+        post 'like' => 'comments#upvote'
+        post 'dislike' => 'comments#downvote'
+      end
+    end
   end
    root 'movies#index'
 
