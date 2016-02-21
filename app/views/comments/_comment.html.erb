@@ -19,6 +19,12 @@
 					<i class="fa fa-trash-o"></i>
 				<% end %>
 			<% end %>
+			<%= link_to like_movie_comment_path(@movie,comment), class: "btn btn-default btn-xs", method: :post do  %>
+				<i class="fa fa-thumbs-o-up"></i> <%= comment.get_upvotes.size %>
+			<% end %>
+			<%= link_to dislike_movie_comment_path(@movie,comment), class: "btn btn-default btn-xs", method: :post do  %>
+				<i class="fa fa-thumbs-o-down"> <%= comment.get_downvotes.size %></i>
+			<% end %>
 		</div>
 	<hr>
 	<% end %>

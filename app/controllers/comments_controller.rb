@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
 	before_action :authenticate_user!
 	before_action :find_movie
+	before_action :find_comment, except: [:new,:create]
 
 	def new
 		@comment = @movie.comments.new
@@ -15,11 +16,10 @@ class CommentsController < ApplicationController
 	end
 
 	def edit
-		@comment = @movie.comments.find(params[:id])
+		
 	end
 
 	def update
-		@comment = @movie.comments.find(params[:id])
 		if @comment.update(comment_params)
 			flash[:success] = "Updated your comment successfully"
 			redirect_to movie_path(@movie)
@@ -27,16 +27,29 @@ class CommentsController < ApplicationController
 	end
 
 	def destroy
-		@comment = @movie.comments.find(params[:id])
 		@comment.destroy
 		flash[:notice] = "Already deleted your comment!"
 		redirect_to movie_path(@movie)
+	end
+
+	def upvote	
+		@comment.upvote_by current_user
+		redirect_to :back
+	end
+
+	def downvote
+		@comment.downvote_by current_user
+		redirect_to :back
 	end
 
 	private
 
 	def find_movie
 		@movie = Movie.find(params[:movie_id])
+	end
+
+	def find_comment
+		@comment = @movie.comments.find(params[:id])
 	end
 
 	def comment_params
