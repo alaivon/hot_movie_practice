@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 ruby '2.2.1'
 
 
+gem 'friendly_id'
+gem 'seo_helper', '~> 1.0'
 gem 'acts_as_votable'
 # gem 'github-linguist', '~> 4.7', '>= 4.7.4'
 gem 'github-markdown', '~> 0.6.9'

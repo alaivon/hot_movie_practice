@@ -13,7 +13,7 @@
 #
 
 class MoviesController < ApplicationController
-	before_action :find_movie, except: [:index, :new, :create]
+	before_action :find_movie, except: [:index, :new, :create, :show]
 	before_action :authenticate_user!, except: [:index, :show]
 
 	def index
@@ -26,12 +26,14 @@ class MoviesController < ApplicationController
 	end
 
 	def show
+		@movie = Movie.friendly.find(params[:id])
 		@comments = @movie.comments.all
 		if @comments.blank?
 			@avg_rating = 0
 		else
 			@avg_rating = @comments.average(:rating).round(2)
 		end
+		set_page_title @movie.title
 	end
 
 	def new
