@@ -77,7 +77,8 @@ body {
 		font-weight: 600;
 	}
 }
-.box {
+#box {
+		height: auto;
 	  background: white;
 		border-radius: 5px;
 		margin-bottom: 40px;
@@ -89,7 +90,7 @@ body {
 	}
 	  img.movie_img {
 	  	width: 100%;
-	  	height: auto;
+	  	max-height: auto;
       -webkit-transition: all .5s ease-out;
 	  -moz-transition: all .5s ease-out;
 	  -o-transition: all .5s ease-out;
