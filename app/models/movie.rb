@@ -18,7 +18,7 @@ class Movie < ActiveRecord::Base
 	validates :title, presence: true
 	validates :description, presence: true
 	validates :length, numericality: {only_integer: true, less_than_or_equal_to: 999 }, presence: true
- 
+  belongs_to :category
 	belongs_to :user
 	has_many :comments
 

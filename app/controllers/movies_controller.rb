@@ -14,7 +14,7 @@
 
 class MoviesController < ApplicationController
 	before_action :find_movie, except: [:index, :new, :create, :show]
-	before_action :authenticate_user!, except: [:index, :show]
+	before_action :authenticate_user!, except: [:index]
 
 	def index
 		if params[:category].blank?
