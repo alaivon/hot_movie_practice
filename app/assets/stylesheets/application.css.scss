@@ -124,3 +124,32 @@ body {
 			a {color: white;}
 		}
 	}
+
+
+	.jumbotron {
+		text-align: center;
+		h1 {
+			font-size: 34px;
+		}
+		p {
+			font-weight: 500;
+			color: red;
+		}
+		a.btn {
+			margin-top: 1em;
+			border-radius: 2em;
+			border: 1px solid gray;
+			background: #996633;
+			font-size: 14px;
+			font-weight: 600;
+			color: white;
+			letter-spacing: 2px;
+			line-height: 2.5em;
+			box-shadow: 3px 3px 5px 6px #ccc;
+			&:hover {
+				font-size: 10px;
+				color: #C0C0C0;
+				background: lighten(#996633, 5%);
+			}
+		}
+	}
