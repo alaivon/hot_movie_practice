@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 
-
+gem 'aws-sdk', '< 2.0'
 gem 'friendly_id'
 gem 'seo_helper', '~> 1.0'
 gem 'acts_as_votable'
