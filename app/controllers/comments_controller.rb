@@ -45,7 +45,7 @@ class CommentsController < ApplicationController
 	private
 
 	def find_movie
-		@movie = Movie.find(params[:movie_id])
+		@movie = Movie.friendly.find(params[:movie_id])
 	end
 
 	def find_comment
