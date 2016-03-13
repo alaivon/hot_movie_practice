@@ -1,3 +1,4 @@
+https://hot-movies-net.herokuapp.com/
 # User Story
 
 - 身為使用者，必須註冊才能使用本網站。
