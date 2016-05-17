@@ -85,7 +85,7 @@ body {
 		@include box-shadow;
 	.image_wrapper {
 		max-width: 100%;
-		border-radius: 5px 5px 0 0;
+		border-radius: 10px 10px 0 0;
 		overflow: hidden;
 	}
 	  img.movie_img {
@@ -96,7 +96,7 @@ body {
 	  -o-transition: all .5s ease-out;
     transition: all .5s ease-out;
 		&:hover {
-			transform: scale(1.075);
+			transform: scale(1);
 		}
 		// width: 100%;
 		
